@@ -1,6 +1,6 @@
 import express from 'express'
 import bodyparser from 'body-parser'
-// import Routes from './routes/Routes.js'
+import testRoutes from './routes/testRoutes.js'
 
 
 const port = 3000;
@@ -19,4 +19,4 @@ app.listen(port, function() {
 // app.get('/',(req,res) => {
 //     res.send('Server Is Running .......3000 Port')
 //     })
-// app.use('/', Routes);
+app.use('/home', testRoutes);
