@@ -1,11 +1,12 @@
 import express from 'express'
 import bodyparser from 'body-parser'
 import testRoutes from './routes/testRoutes.js'
-
-
+import { engine } from 'express-handlebars';
 const port = 3000;
 const app = express();
 
+app.engine('handlebars', engine({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 app.listen(port, function() {
 	console.log("Server is listening at port:" + port);
 });
@@ -19,4 +20,4 @@ app.listen(port, function() {
 // app.get('/',(req,res) => {
 //     res.send('Server Is Running .......3000 Port')
 //     })
-app.use('/home', testRoutes);
+app.use('/', testRoutes);
