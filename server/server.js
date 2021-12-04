@@ -2,12 +2,15 @@ import express from 'express'
 import bodyparser from 'body-parser'
 import testRoutes from './routes/testRoutes.js'
 import adminRoutes from './routes/adminRoutes.js'
-import { engine } from 'express-handlebars';
+// import { engine } from 'express-handlebars';
+// import hbs  from 'hbs';
+import ejs  from 'ejs';
+
 const port = 3000;
 const app = express();
 
-app.engine('handlebars', engine({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+// app.engine('handlebars', engine());
+app.set('view engine', 'ejs');
 app.use(express.static('public'))
 app.listen(port, function() {
 	console.log("Server is listening at port:" + port);

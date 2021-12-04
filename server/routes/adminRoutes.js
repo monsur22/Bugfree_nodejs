@@ -4,5 +4,4 @@ import {index} from '../controller/adminController.js'
 
 router.get('/', index)
 
-
 export default router
