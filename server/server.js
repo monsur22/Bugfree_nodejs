@@ -1,13 +1,27 @@
 import express from 'express'
 import bodyparser from 'body-parser'
+import ejs  from 'ejs';
+import dotenv from 'dotenv'
+import morgan from 'morgan'
 import testRoutes from './routes/testRoutes.js'
 import adminRoutes from './routes/adminRoutes.js'
+import connectDB from './config/db.js'
+
 // import { engine } from 'express-handlebars';
 // import hbs  from 'hbs';
-import ejs  from 'ejs';
+
+dotenv.config()
+connectDB()
 
 const port = 3000;
 const app = express();
+
+
+
+if (process.env.NODE_ENV === 'development') {
+	app.use(morgan('dev'))
+}
+
 
 // app.engine('handlebars', engine());
 app.set('view engine', 'ejs');
