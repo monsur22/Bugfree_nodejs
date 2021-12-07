@@ -1,5 +1,5 @@
 import express from 'express'
-import bodyparser from 'body-parser'
+import bodyParser from 'body-parser';
 import ejs  from 'ejs';
 import dotenv from 'dotenv'
 import morgan from 'morgan'
@@ -16,6 +16,7 @@ connectDB()
 const port = 3000;
 const app = express();
 
+app.use(express.json());
 
 
 if (process.env.NODE_ENV === 'development') {
