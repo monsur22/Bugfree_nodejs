@@ -42,3 +42,7 @@ app.listen(port, function() {
 //     })
 app.use('/', testRoutes);
 app.use('/admin', adminRoutes);
+// app.post('/create', (req, res) => {
+// 	console.log(req.body);
+// 	res.send('Hello World');
+// });
