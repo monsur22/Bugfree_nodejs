@@ -6,6 +6,11 @@ const index = ((req, res) => {
     // res.send('admin route adn controller');
 
 })
+const home_create = ((req, res) => {
+    // res.json(products)
+    res.render('admin/home/home_create');
+    // res.send('admin route adn controller');
+})
 const create = ((req, res) => {
     // res.json(products)
     // res.send("views");
@@ -24,4 +29,4 @@ const create = ((req, res) => {
         res.status(201).json(create)
 })
 
-export { index, create}
+export { index, create, home_create}
