@@ -65,7 +65,7 @@
                       <div class="form-group">
                         <label for="exampleInputEmail1">Title</label>
                         <!-- <input type="text" class="form-control"name="title"placeholder="Enter title"value="%= title %>"/> -->
-                        <input type="text" class="form-control" id="title" name="title"placeholder="Enter title"  >
+                        <input type="text" class="form-control" id="title" name="title"placeholder="Enter title" value="<%= typeof title != 'undefined' ? title : '' %>" >
 
                       </div>
                       <div class="form-group">
@@ -73,26 +73,27 @@
                         <input
                           type="text"
                           class="form-control"
-                          id="exampleInputPassword1"
                           placeholder="header"
                           id="header"
                           name="header"
+                          value="<%= typeof header != 'undefined' ? header : '' %>"
                         />
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Description</label>
                         <textarea class="form-control" id="desc" name="desc"
-                         rows="3" placeholder="Enter Description"></textarea>
+                         rows="3" placeholder="Enter Description"><%= typeof logo != 'undefined' ? logo : '' %></textarea>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Logo</label>
                         <input
                           type="text"
                           class="form-control"
-                          id="exampleInputEmail1"
                           placeholder="Enter Logo"
                           id="logo"
                           name="logo"
+                          value="<%= typeof logo != 'undefined' ? logo : '' %>"
+
 
                         />
                       </div>
@@ -127,19 +128,83 @@
                       </button>
                     </div>
                   </form>
-                  <form action="/admin/home-create" method="POST">
-                    <label for="title">Blog title:</label>
-                    <input type="text" id="title" name="title" required>
-                    <label for="snippet">Blog snippet:</label>
-                    <input type="text" id="snippet" name="snippet" required>
-                    <label for="body">Blog body:</label>
-                    <textarea id="body" name="body" required></textarea>
-                    <button>Submit</button>
-                  </form>
+
                 </div>
                 <!-- /.card -->
 
                 <!-- /.card -->
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Bordered Table</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th style="width: 10px">#</th>
+                          <th>Task</th>
+                          <th>Progress</th>
+                          <th style="width: 40px">Label</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1.</td>
+                          <td>Update software</td>
+                          <td>
+                            <div class="progress progress-xs">
+                              <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                            </div>
+                          </td>
+                          <td><span class="badge bg-danger">55%</span></td>
+                        </tr>
+                        <tr>
+                          <td>2.</td>
+                          <td>Clean database</td>
+                          <td>
+                            <div class="progress progress-xs">
+                              <div class="progress-bar bg-warning" style="width: 70%"></div>
+                            </div>
+                          </td>
+                          <td><span class="badge bg-warning">70%</span></td>
+                        </tr>
+                        <tr>
+                          <td>3.</td>
+                          <td>Cron job running</td>
+                          <td>
+                            <div class="progress progress-xs progress-striped active">
+                              <div class="progress-bar bg-primary" style="width: 30%"></div>
+                            </div>
+                          </td>
+                          <td><span class="badge bg-primary">30%</span></td>
+                        </tr>
+                        <tr>
+                          <td>4.</td>
+                          <td>Fix and squish bugs</td>
+                          <td>
+                            <div class="progress progress-xs progress-striped active">
+                              <div class="progress-bar bg-success" style="width: 90%"></div>
+                            </div>
+                          </td>
+                          <td><span class="badge bg-success">90%</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer clearfix">
+                    <ul class="pagination pagination-sm m-0 float-right">
+                      <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <!--/.col (left) -->
             </div>
