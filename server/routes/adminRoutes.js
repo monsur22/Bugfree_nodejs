@@ -5,5 +5,6 @@ import {index, home_create, home_create_view} from '../controller/adminControlle
 router.get('/', index)
 router.get('/home-create', home_create_view)
 router.post('/home-create', home_create)
+// router.get('/home-get', home_get)
 
 export default router

@@ -6,7 +6,11 @@ import morgan from 'morgan'
 import testRoutes from './routes/testRoutes.js'
 import adminRoutes from './routes/adminRoutes.js'
 import connectDB from './config/db.js'
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 // import { engine } from 'express-handlebars';
 // import hbs  from 'hbs';
 
@@ -14,8 +18,8 @@ dotenv.config()
 connectDB()
 const port = 3000;
 const app = express();
-app.use(express.static('public'))
-
+// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
