@@ -34,7 +34,7 @@ const home_create = ((req, res) => {
 
         home.save().then(data => {
             //res.send(data)
-            res.redirect('/home-create');
+            res.redirect('/admin/home-create');
         })
         .catch(err =>{
             res.status(500).send({
