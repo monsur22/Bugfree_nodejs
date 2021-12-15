@@ -43,10 +43,17 @@ const home_create = ((req, res) => {
         });
 
 })
+
+const about = ((req, res) => {
+    // res.json(products)
+    res.render('admin/about/about_create');
+    // res.send('admin route adn controller');
+
+})
 // const home_get = ((req, res) => {
 //     const data =  homeModel.find()
 //     // console.log(data);
 //     res.render('admin/home/home_create',{data:rows});
 
 // })
-export { index, home_create_view, home_create };
+export { index, home_create_view, home_create, about };
