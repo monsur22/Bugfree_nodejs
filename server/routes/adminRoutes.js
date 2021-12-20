@@ -6,7 +6,7 @@ router.get('/', index)
 router.get('/home-create', home_create_view)
 router.post('/home-create', home_create)
 router.get('/home-edit', home_edit)
-router.get('/home-delete', home_delete)
+router.get('/home-delete/(:id)', home_delete)
 
 router.get('/about', about)
 

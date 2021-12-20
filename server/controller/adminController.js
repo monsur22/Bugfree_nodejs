@@ -47,8 +47,14 @@ const home_edit = ((req, res) => {
 
 
 })
-const home_delete = ((req, res) => {
-
+const home_delete = ((req, res,next) => {
+    Home.findByIdAndRemove(req.params.id, (err, doc) => {
+        if (!err) {
+            res.redirect('/admin/home-create');
+        } else {
+            console.log('Failed to Delete user Details: ' + err);
+        }
+    });
 
 })
 const about = ((req, res) => {
