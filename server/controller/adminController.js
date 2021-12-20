@@ -43,7 +43,14 @@ const home_create = ((req, res) => {
         });
 
 })
+const home_edit = ((req, res) => {
 
+
+})
+const home_delete = ((req, res) => {
+
+
+})
 const about = ((req, res) => {
     // res.json(products)
     res.render('admin/about/about_create');
@@ -56,4 +63,4 @@ const about = ((req, res) => {
 //     res.render('admin/home/home_create',{data:rows});
 
 // })
-export { index, home_create_view, home_create, about };
+export { index, home_create_view, home_create,home_edit,home_delete, about };

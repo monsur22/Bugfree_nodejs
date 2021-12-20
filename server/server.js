@@ -16,7 +16,7 @@ const __dirname = dirname(__filename);
 
 dotenv.config()
 connectDB()
-const port = 3000;
+const port = 5000;
 const app = express();
 
 app.use(express.static(__dirname + '/public'));
